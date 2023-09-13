@@ -31,10 +31,10 @@ List<String> initLanguages = [];
 List<String> initDevOps = [];
 List<String> initFrameworks = [];
 String initSlackID = '';
-String initGitHibHandle = '';
+String initGitHubHandle = '';
 
 TextEditingController addressEdit = TextEditingController(text: address);
-TextEditingController mboileEdit = TextEditingController(text: mobile);
+TextEditingController mobileEdit = TextEditingController(text: mobile);
 TextEditingController emailEdit = TextEditingController(text: email);
 TextEditingController nameEdit = TextEditingController(text: fullName);
 TextEditingController dobEdit = TextEditingController(text: dateOfBirth);
@@ -44,7 +44,12 @@ TextEditingController sexeEdit = TextEditingController(text: sex);
 TextEditingController msrEdit = TextEditingController(text: maritalStatus);
 TextEditingController objStatementEdit =
     TextEditingController(text: objectiveStatement);
-
+TextEditingController language1 = TextEditingController(text: languages[0]);
+TextEditingController language2 = TextEditingController(text: languages[1]);
+TextEditingController language3 = TextEditingController(text: languages[2]);
+TextEditingController devops1 = TextEditingController(text: devOps[0]);
+TextEditingController framework1 = TextEditingController(text: frameWorks[0]);
+TextEditingController framework2 = TextEditingController(text: frameWorks[1]);
 TextEditingController slackIDEdit = TextEditingController(text: slackID);
 
 TextEditingController githubHandleEdit =
@@ -53,7 +58,7 @@ TextEditingController githubHandleEdit =
 @override
 void dispose() {
   addressEdit.dispose();
-  mboileEdit.dispose();
+  mobileEdit.dispose();
   emailEdit.dispose();
   nameEdit.dispose();
   dobEdit.dispose();

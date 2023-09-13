@@ -17,12 +17,10 @@ class _CVEditState extends State<CVEdit> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: (() {
-            
-              backButtonPressed();
-              Navigator.pop(context);
-            
+            backButtonPressed();
+            Navigator.pop(context);
           }),
-          icon: Icon(Icons.chevron_left),
+          icon: const Icon(Icons.chevron_left),
         ),
         backgroundColor: Colors.blueGrey,
         title: const Text('EDIT RESUME'),
@@ -36,7 +34,6 @@ class _CVEditState extends State<CVEdit> {
             children: [
               TextField(
                 controller: addressEdit,
-                
                 decoration: const InputDecoration(
                   labelText: 'Edit Address:',
                 ),
@@ -45,37 +42,26 @@ class _CVEditState extends State<CVEdit> {
                 height: 6.0,
               ),
               TextField(
-                controller: mboileEdit,
-                onChanged: ((newMobile) => updateMobile(newMobile)),
+                controller: mobileEdit,
                 decoration:
-                    const InputDecoration(labelText: 'Edit Mobile Number'),
+                    const InputDecoration(labelText: 'Edit Mobile Number(s):'),
               ),
               const SizedBox(
                 height: 6.0,
               ),
-              Text(
-                email,
-                style: const TextStyle(
-                  fontSize: 15.0,
-                  color: Colors.blueGrey,
-                  fontStyle: FontStyle.italic,
+              TextField(
+                controller: emailEdit,
+                decoration: const InputDecoration(
+                  labelText: 'Edit Email:',
                 ),
               ),
               const SizedBox(
                 height: 6.0,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5.0),
-                color: Colors.blueGrey,
-                child: Text(
-                  fullName,
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.grey[200],
-                    fontWeight: FontWeight.bold,
-                  ),
+              TextField(
+                controller: nameEdit,
+                decoration: const InputDecoration(
+                  labelText: 'Edit Name:',
                 ),
               ),
               const Divider(
@@ -110,9 +96,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      dateOfBirth,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: dobEdit,
                     ),
                   ),
                 ],
@@ -137,9 +122,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      stateOfOrigin,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: soeEdit,
                     ),
                   ),
                 ],
@@ -164,9 +148,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      lGA,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: lgaeEdit,
                     ),
                   ),
                 ],
@@ -191,9 +174,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      sex,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: sexeEdit,
                     ),
                   ),
                 ],
@@ -218,9 +200,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      maritalStatus,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: msrEdit,
                     ),
                   ),
                 ],
@@ -240,9 +221,12 @@ class _CVEditState extends State<CVEdit> {
                   ),
                 ),
               ),
-              Text(
-                objectiveStatement,
-                style: const TextStyle(fontSize: 18.0),
+              // Resize the box to expand or set a max height.
+              TextField(
+                controller: objStatementEdit,
+                maxLength: 250,
+                maxLines: 4,
+                decoration: const InputDecoration(),
               ),
               const Divider(
                 color: Colors.blueGrey,
@@ -280,23 +264,20 @@ class _CVEditState extends State<CVEdit> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          languages[0],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: language1,
                         ),
                         const SizedBox(
                           height: 5.0,
                         ),
-                        Text(
-                          languages[1],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: language2,
                         ),
                         const SizedBox(
                           height: 5.0,
                         ),
-                        Text(
-                          languages[2],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: language3,
                         ),
                       ],
                     ),
@@ -327,9 +308,8 @@ class _CVEditState extends State<CVEdit> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          devOps[0],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: devops1,
                         ),
                       ],
                     ),
@@ -363,16 +343,14 @@ class _CVEditState extends State<CVEdit> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          frameWorks[0],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: framework1,
                         ),
                         const SizedBox(
                           width: 5.0,
                         ),
-                        Text(
-                          frameWorks[1],
-                          style: const TextStyle(fontSize: 18.0),
+                        TextField(
+                          controller: framework2,
                         ),
                       ],
                     ),
@@ -414,9 +392,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      slackID,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: slackIDEdit,
                     ),
                   ),
                 ],
@@ -441,9 +418,8 @@ class _CVEditState extends State<CVEdit> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Text(
-                      gitHubHandle,
-                      style: const TextStyle(fontSize: 18.0),
+                    child: TextField(
+                      controller: githubHandleEdit,
                     ),
                   ),
                 ],
@@ -456,7 +432,23 @@ class _CVEditState extends State<CVEdit> {
         backgroundColor: Colors.blueGrey,
         onPressed: () {
           setState(() {
-            updateAddress(addressEdit.text);
+            updateData(
+              newAddress: addressEdit.text,
+              newMobile: mobileEdit.text,
+              newEmail: emailEdit.text,
+              newName: nameEdit.text,
+              newDoB: dobEdit.text,
+              newSoO: soeEdit.text,
+              newLga: lgaeEdit.text,
+              newSex: sexeEdit.text,
+              newMaritalStatus: msrEdit.text,
+              newObjStatement: objStatementEdit.text,
+              newSlackID: slackIDEdit.text,
+              newGitHub: githubHandleEdit.text,
+              newLanguages: [language1.text, language2.text, language3.text],
+              newDevOps: [devops1.text],
+              newFrameWorks: [framework1.text, framework2.text],
+            );
           });
 
           Navigator.pop(context);

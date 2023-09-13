@@ -13,7 +13,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-###Prerequisites
+### Prerequisites
 You will need flutter ('>=2.19.0-146.2.beta <3.0.0') installed in order for this code base to work properly
 
 No 3rd party dependencies are needed.

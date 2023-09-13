@@ -1,10 +1,8 @@
-# cv_app_cc_leo
+# CV App C C Leo 
 
-A new Flutter project.
+An application that displays a CV and has edit functionality. Data is updated automatically after edit.
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -14,3 +12,8 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+###Prerequisites
+You will need flutter ('>=2.19.0-146.2.beta <3.0.0') installed in order for this code base to work properly
+
+No 3rd party dependencies are needed.

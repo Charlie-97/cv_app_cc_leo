@@ -1,8 +1,16 @@
+import 'package:cv_app_cc_leo/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:cv_app_cc_leo/utils/contents.dart';
 
-class CVView extends StatelessWidget {
+class CVView extends StatefulWidget {
   const CVView({super.key});
+
+  @override
+  State<CVView> createState() => _CVViewState();
+}
+
+class _CVViewState extends State<CVView> {
+  TextEditingController addressEdit = TextEditingController(text: address);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,7 @@ class CVView extends StatelessWidget {
                 height: 6.0,
               ),
               Text(
-                '$mobile1, $mobile2',
+                mobile,
                 style: TextStyle(
                   fontSize: 15.0,
                   fontWeight: FontWeight.bold,
@@ -41,7 +49,7 @@ class CVView extends StatelessWidget {
                 height: 6.0,
               ),
               Text(
-                '$email1, $email2',
+                email,
                 style: const TextStyle(
                   fontSize: 15.0,
                   color: Colors.blueGrey,
@@ -441,7 +449,10 @@ class CVView extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blueGrey,
-        onPressed: () => Navigator.pushNamed(context, '/editPage'),
+        onPressed: () {
+          saveInitData();
+          Navigator.pushNamed(context, '/editPage');
+        },
         child: const Icon(Icons.edit),
       ),
     );
